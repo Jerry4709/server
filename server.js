@@ -53,7 +53,9 @@ app.use((req, res, next) => {
 });
 
 // WebSocket Server
-const wss = new WebSocket.Server({ port: 8080 });
+const WS_PORT = process.env.WS_PORT || 5002;
+const wss = new WebSocket.Server({ port: WS_PORT });
+
 
 const Room = require('./models/Room'); // Import Room Model
 
